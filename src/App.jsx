@@ -19,7 +19,6 @@ function App() {
   }
   return (
     <div>
-      e
       <Header />
       <Input addTask={addTask} />
       <TodoList todos={todos} />
