@@ -5,7 +5,11 @@ const Todo = ({ todo, deleteTask }) => {
     <>
       <li>
         {todo.task} {todo.isFinished ? "TRUE" : "FAULS"}
-        <button className="delete-button" >削除</button>
+        <button className="delete-button" onClick={() => deleteTask(todo.id)}>
+          削除
+        </button>
+        <button className="up-button">UP</button>
+        <button className="down-button">DOWN</button>
       </li>
     </>
   );

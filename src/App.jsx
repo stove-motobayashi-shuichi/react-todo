@@ -18,8 +18,8 @@ function App() {
     setTodos([...todos, newTodo]);
   }
 
-  function deleteTask(index) {
-    const updateTask = todos.filter((_, i) => i !== index);
+  function deleteTask(id) {
+    const updateTask = todos.filter((todo) => todo.id !== id);
     setTodos(updateTask);
   }
 
