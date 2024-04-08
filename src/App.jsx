@@ -17,11 +17,17 @@ function App() {
     const newTodo = { id: uuid(), task: newTask, isFinished: false };
     setTodos([...todos, newTodo]);
   }
+
+  function deleteTask(index) {
+    const updateTask = todos.filter((_, i) => i !== index);
+    setTodos(updateTask);
+  }
+
   return (
     <div>
       <Header />
       <Input addTask={addTask} />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} deletetodo={deleteTask} />
     </div>
   );
 }

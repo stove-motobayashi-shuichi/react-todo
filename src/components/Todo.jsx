@@ -5,7 +5,7 @@ const Todo = ({ todo }) => {
     <>
       <li>
         {todo.task} {todo.isFinished ? "TRUE" : "FAULS"}
-        <buttonc className="delete-button">削除</buttonc>
+        <button className="delete-button">削除</button>
       </li>
     </>
   );
