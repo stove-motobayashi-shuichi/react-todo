@@ -27,7 +27,7 @@ function App() {
     <div>
       <Header />
       <Input addTask={addTask} />
-      <TodoList todos={todos} deletetodo={deleteTask} />
+      <TodoList todos={todos} deleteTask={deleteTask} />
     </div>
   );
 }
