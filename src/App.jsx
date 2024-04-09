@@ -25,10 +25,14 @@ function App() {
     setTodos(updateTask);
   }
 
-  function upTask(todos) {
-    const updateTasks = ([...todos][
-      (updateTasks[todos.id], updateTasks[todos.id - 1])
-    ] = [updateTasks[todos.id - 1], updateTasks[todos.id]]);
+  //UPボタン。
+  function upTask(todos, index) {
+    const updateTasks = [...todos];
+    [updateTasks[index], updateTasks[index - 1]] = [
+      updateTasks[index - 1],
+      updateTasks[index],
+    ];
+    setTodos(updateTasks);
   }
 
   return (

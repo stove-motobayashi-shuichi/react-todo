@@ -6,8 +6,8 @@ function TodoList({ todos, deleteTask, upTask }) {
     <ol>
       {todos.map((todo) => (
         <Todo
+          todos={todos}
           key={todo.id}
-          todo={todo}
           deleteTask={deleteTask}
           upTask={upTask}
         />
