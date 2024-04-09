@@ -26,8 +26,14 @@ function App() {
   }
 
   //UPボタン。
-  function upTask(todos, index) {
+  function upTask(id) {
     const updateTasks = [...todos];
+    // [updateTasks[index], updateTasks[index - 1]] = [
+    //   updateTasks[index - 1],
+    //   updateTasks[index],
+    // ]
+    //const updateTasks = todos.findIndex((id) => index);
+    const index = updateTasks.findIndex(() =>  );
     [updateTasks[index], updateTasks[index - 1]] = [
       updateTasks[index - 1],
       updateTasks[index],
