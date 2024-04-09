@@ -12,22 +12,30 @@ function App() {
     // { id: 3, task: "todo3", isFinished: false },
   ]);
 
+  //新規To-Doを追加する処理。
   function addTask(newTask) {
     if (!newTask) return;
     const newTodo = { id: uuid(), task: newTask, isFinished: false };
     setTodos([...todos, newTodo]);
   }
 
+  //削除ボタン。
   function deleteTask(id) {
     const updateTask = todos.filter((todo) => todo.id !== id);
     setTodos(updateTask);
+  }
+
+  function upTask(todos) {
+    const updateTasks = ([...todos][
+      (updateTasks[todos.id], updateTasks[todos.id - 1])
+    ] = [updateTasks[todos.id - 1], updateTasks[todos.id]]);
   }
 
   return (
     <div>
       <Header />
       <Input addTask={addTask} />
-      <TodoList todos={todos} deleteTask={deleteTask} />
+      <TodoList todos={todos} deleteTask={deleteTask} upTask={upTask} />
     </div>
   );
 }

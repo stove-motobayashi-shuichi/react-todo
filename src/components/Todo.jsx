@@ -1,6 +1,6 @@
 import React from "react";
 
-const Todo = ({ todo, deleteTask }) => {
+const Todo = ({ todo, deleteTask, upTask }) => {
   return (
     <>
       <li>
@@ -8,7 +8,9 @@ const Todo = ({ todo, deleteTask }) => {
         <button className="delete-button" onClick={() => deleteTask(todo.id)}>
           削除
         </button>
-        <button className="up-button">UP</button>
+        <button className="up-button" onClick={() => upTask(todo.id)}>
+          UP
+        </button>
         <button className="down-button">DOWN</button>
       </li>
     </>
