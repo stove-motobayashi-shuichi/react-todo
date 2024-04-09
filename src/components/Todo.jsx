@@ -1,10 +1,10 @@
 import React from "react";
 
-const Todo = (todo, todos, deleteTask, upTask) => {
+const Todo = ({ todo, deleteTask, upTask }) => {
   return (
     <>
       <li>
-        {todo.task} {todos.task} {todo.isFinished ? "TRUE" : "FAULS"}
+        {todo.task} {todo.isFinished ? "TRUE" : "FAULS"}
         <button className="delete-button" onClick={() => deleteTask(todo.id)}>
           削除
         </button>
