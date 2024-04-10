@@ -5,6 +5,7 @@ const Todo = ({ todo, deleteTask, upTask, downTask }) => {
     <>
       <li>
         {todo.task} {todo.isFinished ? "TRUE" : "FAULS"}
+        <button className="change-button">切り替え</button>
         <button className="delete-button" onClick={() => deleteTask(todo.id)}>
           削除
         </button>
