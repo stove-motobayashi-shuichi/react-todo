@@ -33,9 +33,20 @@ function App() {
     //   updateTasks[index],
     // ]
     //const updateTasks = todos.findIndex((id) => index);
-    const index = updateTasks.findIndex(() =>  );
+    const index = updateTasks.findIndex((todo) => todo.id === id);
     [updateTasks[index], updateTasks[index - 1]] = [
       updateTasks[index - 1],
+      updateTasks[index],
+    ];
+    setTodos(updateTasks);
+  }
+
+  //Downボタン。
+  function downTask(id) {
+    const updateTasks = [...todos];
+    const index = updateTasks.findIndex((todo) => todo.id === id);
+    [updateTasks[index], updateTasks[index + 1]] = [
+      updateTasks[index + 1],
       updateTasks[index],
     ];
     setTodos(updateTasks);
@@ -45,7 +56,12 @@ function App() {
     <div>
       <Header />
       <Input addTask={addTask} />
-      <TodoList todos={todos} deleteTask={deleteTask} upTask={upTask} />
+      <TodoList
+        todos={todos}
+        deleteTask={deleteTask}
+        upTask={upTask}
+        downTask={downTask}
+      />
     </div>
   );
 }
