@@ -51,6 +51,13 @@ function App() {
     setTodos(updateTasks);
   }
 
+  //切り替えボタン。
+  function togglesFinished() {
+    const change = () => {
+      console.log("Toggle-ON");
+    };
+  }
+
   return (
     <div>
       <Header />
@@ -60,6 +67,7 @@ function App() {
         deleteTask={deleteTask}
         upTask={upTask}
         downTask={downTask}
+        togglesFinished={togglesFinished}
       />
     </div>
   );

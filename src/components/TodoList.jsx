@@ -1,7 +1,13 @@
 import React from "react";
 import Todo from "./Todo";
 
-function TodoList({ todos, deleteTask, upTask, downTask }) {
+function TodoList({
+  todos,
+  deleteTask,
+  upTask,
+  downTask,
+  togglesFinished,
+}) {
   return (
     <ol>
       {todos.map((todo) => (
@@ -11,6 +17,7 @@ function TodoList({ todos, deleteTask, upTask, downTask }) {
           deleteTask={deleteTask}
           upTask={upTask}
           downTask={downTask}
+          togglesFinished={togglesFinished}
         />
       ))}
     </ol>

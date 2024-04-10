@@ -1,11 +1,16 @@
 import React from "react";
 
-const Todo = ({ todo, deleteTask, upTask, downTask }) => {
+const Todo = ({ todo, deleteTask, upTask, downTask, togglesFinished }) => {
   return (
     <>
       <li>
         {todo.task} {todo.isFinished ? "TRUE" : "FAULS"}
-        <button className="change-button">切り替え</button>
+        <button
+          className="change-button"
+          onClick={() => console.log(togglesFinished)}
+        >
+          切り替え
+        </button>
         <button className="delete-button" onClick={() => deleteTask(todo.id)}>
           削除
         </button>
