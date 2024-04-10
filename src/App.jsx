@@ -28,8 +28,10 @@ function App() {
   //UPボタン。
   function upTask(id) {
     const updateTasks = [...todos];
+    // トップボタンでエラーが起きる処理の別解。const indexの処理をさせる手間がない。
+    // if(updateTasks[0].id === id) return;
     const index = updateTasks.findIndex((todo) => todo.id === id);
-    if (!index) return;
+    if (index === 0) return;
     [updateTasks[index], updateTasks[index - 1]] = [
       updateTasks[index - 1],
       updateTasks[index],
@@ -40,6 +42,7 @@ function App() {
   //Downボタン。
   function downTask(id) {
     const updateTasks = [...todos];
+    if (updateTasks[updateTasks.length - 1].id === id) return;
     const index = updateTasks.findIndex((todo) => todo.id === id);
     [updateTasks[index], updateTasks[index + 1]] = [
       updateTasks[index + 1],
