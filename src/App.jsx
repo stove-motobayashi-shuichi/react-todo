@@ -52,11 +52,16 @@ function App() {
   }
 
   //切り替えボタン。
-  function togglesFinished() {
-    const change = () => {
-      console.log("Toggle-ON");
-    };
-  }
+  function togglesFinished(id) {}
+  //★メモ
+  // 1:対象のtodoのidを引数として受け取る
+  // 2:
+  // 【idからtodo内部の[true or false]の場所を引き取る】
+  // 3:
+  // 【trueかfalseか判断する】
+  // 4:
+  // 【クリックすることによってtrueとfalseを切り替えられるようにする】
+  // 5:新しいtodoの配列updateTodosで、setTodos(updateTodos)をやってtodosを更新。
 
   return (
     <div>
