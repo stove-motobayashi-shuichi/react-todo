@@ -15,7 +15,7 @@ function App() {
   //新規To-Doを追加する処理。
   function addTask(newTask) {
     if (!newTask) return;
-    const newTodo = { id: uuid(), task: newTask, isFinished: false };
+    const newTodo = { id: uuid(), task: newTask, isFinished: "False"};
     setTodos([...todos, newTodo]);
   }
 
@@ -52,17 +52,12 @@ function App() {
   }
 
   //切り替えボタン。
-  function togglesFinished(id) {}
-  //★メモ
-  // 1:対象のtodoのidを引数として受け取る
-  // 2:
-  // 【idからtodo内部の[true or false]の場所を引き取る】
-  // 3:
-  // 【trueかfalseか判断する】
-  // 4:
-  // 【クリックすることによってtrueとfalseを切り替えられるようにする】
-  // 5:新しいtodoの配列updateTodosで、setTodos(updateTodos)をやってtodosを更新。
-
+  function togglesFinished(id) {
+    const updateTasks = todos.map((todo) => todo.id === id);
+    if (updateTasks !== id) return;
+    const index = updateTasks =>
+  }
+ 
   return (
     <div>
       <Header />
