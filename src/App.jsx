@@ -15,7 +15,7 @@ function App() {
   //新規To-Doを追加する処理。
   function addTask(newTask) {
     if (!newTask) return;
-    const newTodo = { id: uuid(), task: newTask, isFinished: "False"};
+    const newTodo = { id: uuid(), task: newTask, isFinished: false };
     setTodos([...todos, newTodo]);
   }
 
@@ -51,13 +51,21 @@ function App() {
     setTodos(updateTasks);
   }
 
-  //切り替えボタン。
+  //Todoが完了したかしてないかを切り替える処理。
+  //id:切り替えたいTodoのid
   function togglesFinished(id) {
-    const updateTasks = todos.map((todo) => todo.id === id);
-    if (updateTasks !== id) return;
-    const index = updateTasks =>
+    //todosの中にあるtodoを分割して、そのidによって処理する方法を決める
+    //もし、切り替えたいTodoのidが、map処理で分けたidと違えばreturnとして何もしない。
+    //もし、切り替えたいTodoのidが、map処理で分けたidと同じならば、isFinishedの表示を切り替える。
+    const updateTasks = todos.map((todo) => {
+      if (todo.id === id)
+        return { id: todo.id, task: todo.task, isFinished: !todo.isFinished };
+      return todo;
+    });
+    //この関数内で行われた処理をsetTodosとして更新する。
+    setTodos(updateTasks);
   }
- 
+
   return (
     <div>
       <Header />

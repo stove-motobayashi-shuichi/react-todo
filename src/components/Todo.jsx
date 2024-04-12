@@ -4,11 +4,11 @@ const Todo = ({ todo, deleteTask, upTask, downTask, togglesFinished }) => {
   return (
     <>
       <li>
-        {todo.task} {todo.isFinished}
+        {todo.task} {todo.isFinished ? "True" : "False"}
         <button
           key="change"
           className="change-button"
-          onClicke={() => togglesFinished(todo.id)}
+          onClick={() => togglesFinished(todo.id)}
         >
           切り替え
         </button>
